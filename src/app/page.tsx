@@ -11,23 +11,32 @@ const cards = [
   {
     title: "Festivalen genom tiderna",
     image: "/assets/GAT20221008-DSC02234-710x480-1.jpg",
+    href: "#",
   },
-  { title: "Nyheter", image: "/assets/SG20221009-DSC02592-710x480-1.jpg" },
+  {
+    title: "Nyheter",
+    image: "/assets/SG20221009-DSC02592-710x480-1.jpg",
+    href: "#",
+  },
   {
     title: "Festivalens områden",
     image: "/assets/Karta_beskuren-710x480-1.jpg",
+    href: "#",
   },
   {
     title: "Frågor och svar",
     image: "/assets/ST20221009-DSC03777-710x480-1.jpg",
+    href: "#",
   },
   {
     title: "UNG Kulturfestival",
     image: "/assets/GAT20221008-DSC01651-710x480-1.jpg",
+    href: "#",
   },
   {
     title: "Partner och sponsorer",
     image: "/assets/NB20221008-DSC01634-710x480-1.jpg",
+    href: "#",
   },
 ];
 
@@ -72,13 +81,31 @@ export default function Home() {
 
   return (
     <main className="relative">
+      {/* Event Title */}
+      {/* Title & Date */}
+      <motion.div
+        className="text-center font-bold md:py-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h1 className="flex flex-col text-3xl md:text-5xl md:leading-[48px] lg:text-[60px]">
+          <span>KULTUR</span>
+          <span>FESTIVALEN</span>
+        </h1>
+        <h2 className="mt-1 text-2xl sm:text-3xl md:text-[42px]">
+          13-17/8 2025
+        </h2>
+      </motion.div>
+
       {/* Hero Section */}
       <motion.section
         className="relative aspect-2/1"
         ref={heroRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
+        transition={{ duration: 0.4, delay: 1.2 }}
         viewport={{ once: true }}
       >
         <motion.div className="absolute inset-0 z-0">
@@ -107,7 +134,7 @@ export default function Home() {
       <section className="relative overflow-hidden px-4 pt-20 pb-29 text-center">
         {/* bg image */}
         <motion.div
-          className="absolute bottom-0 left-0 mb-[-1px] h-[472px] w-[819px] overflow-hidden"
+          className="absolute bottom-0 left-0 z-[-1] mb-[-1px] h-[472px] w-[819px] overflow-hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 5, ease: [0.33, 1, 0.68, 1] }}
@@ -130,7 +157,7 @@ export default function Home() {
         </motion.div>
 
         <motion.h2
-          className="mb-12 text-3xl font-normal tracking-tighter md:text-7xl"
+          className="mb-12 text-3xl font-normal tracking-tighter md:text-5xl lg:text-7xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
@@ -153,6 +180,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
           viewport={{ once: true }}
+          className="relative"
         >
           <Link href="#">
             <Image
@@ -197,7 +225,7 @@ export default function Home() {
               }}
               viewport={{ once: true, amount: 0.4 }}
             >
-              <Link href="#" className="block h-full w-full">
+              <Link href={card.href} className="block h-full w-full">
                 <div className="relative h-full w-full transition-transform duration-[0.8s] ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:scale-[1.05]">
                   <Image
                     src={card.image}
@@ -211,7 +239,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 
                 {/* Title */}
-                <h3 className="bg-background absolute bottom-4 left-4 translate-y-4 px-2.5 text-[28px] leading-[1.3] font-bold tracking-[-0.5] text-white opacity-0 transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:translate-y-0 group-hover:opacity-100">
+                <h3 className="bg-background absolute bottom-4 left-4 px-2.5 text-[18px] leading-[1.3] font-bold tracking-[-0.5] text-white transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:translate-y-0 group-hover:opacity-100 md:text-[24px] lg:translate-y-4 lg:text-[28px] lg:opacity-0">
                   {card.title}
                 </h3>
               </Link>

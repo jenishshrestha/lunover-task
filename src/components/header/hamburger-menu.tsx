@@ -78,23 +78,23 @@ export function HamburgerMenu() {
       <MagneticButton className="relative z-50 rounded-full">
         <span
           onClick={toggleMenu}
-          className="flex h-15 w-15 flex-col items-center justify-center gap-1.5 rounded-full bg-black p-3 shadow-lg focus:outline-none"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-full bg-black p-3 shadow-lg focus:outline-none lg:h-15 lg:w-15"
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <motion.span
-            animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+            animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="block h-0.5 w-6 bg-white"
+            className="block h-0.5 w-4 bg-white lg:w-6"
           />
           <motion.span
             animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="block h-0.5 w-6 bg-white"
+            className="block h-0.5 w-4 bg-white lg:w-6"
           />
           <motion.span
-            animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+            animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="block h-0.5 w-6 bg-white"
+            className="block h-0.5 w-4 bg-white lg:w-6"
           />
         </span>
       </MagneticButton>

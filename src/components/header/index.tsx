@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { HamburgerMenu } from "./hamburger-menu";
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 // Parent animation controller
 const containerVariants = {
@@ -29,36 +30,34 @@ const childVariants = {
 };
 
 /**
- * ==================================================
- * Main Components
+ * ===========================================================
+ * Header Component
  * @returns
- * ==================================================
+ * ===========================================================
  */
 const Header = () => {
+  const { visible } = useScrollDirection();
   return (
     <motion.header
-      className="z-30 flex items-start justify-between px-20 py-10"
+      className="fixed top-0 right-0 left-0 z-30 flex flex-row items-start justify-between px-4 py-6 transition-transform duration-500 md:px-10 md:py-8 lg:px-20 lg:py-10"
       variants={containerVariants}
       initial="hidden"
       animate="show"
+      style={{
+        translateY: visible ? 0 : -100,
+      }}
     >
+      {/* Logo */}
       <motion.div
         variants={childVariants}
-        className="text-3xl font-bold"
         whileHover={{ scale: 1.1 }}
+        className="text-xl font-bold md:text-2xl lg:text-3xl"
       >
         <Link href="/">FRI ENTRÉ</Link>
       </motion.div>
 
-      <motion.div variants={childVariants} className="text-center font-bold">
-        <h1 className="flex flex-col text-[60px] leading-none font-bold">
-          <span>KULTUR</span>
-          <span>FESTIVALEN</span>
-        </h1>
-        <h2 className="text-[42px] leading-none">13-17/8 2025</h2>
-      </motion.div>
-
-      <motion.div variants={childVariants}>
+      {/* Hamburger (mobile first) */}
+      <motion.div variants={childVariants} className="">
         <HamburgerMenu />
       </motion.div>
     </motion.header>
