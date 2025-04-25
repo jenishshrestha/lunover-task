@@ -17,8 +17,9 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="text-center md:text-left"
         >
-          <Stockholms className="h-[1em] text-[59px]" />
+          <Stockholms className="inline-block h-[1em] text-[59px]" />
         </motion.div>
 
         <motion.div
@@ -61,7 +62,7 @@ const Footer = () => {
         </motion.div>
 
         <motion.div
-          className="text-right"
+          className="text-center md:text-right"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
