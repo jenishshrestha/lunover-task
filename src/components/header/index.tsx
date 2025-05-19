@@ -39,7 +39,7 @@ const Header = () => {
   const { visible } = useScrollDirection();
   return (
     <motion.header
-      className="fixed top-0 right-0 left-0 z-30 flex flex-row items-start justify-between px-4 py-6 transition-transform duration-500 md:px-10 md:py-8 lg:px-20 lg:py-10"
+      className="fixed top-0 right-0 left-0 z-30 flex flex-row items-start justify-between px-4 py-6 transition-transform duration-500 md:px-10 md:py-8 lg:py-8 lg:pr-[6.563rem] lg:pl-[6.063rem]"
       variants={containerVariants}
       initial="hidden"
       animate="show"
@@ -53,7 +53,9 @@ const Header = () => {
         whileHover={{ scale: 1.1 }}
         className="text-xl font-bold md:text-2xl lg:text-3xl"
       >
-        <Link href="/">FRI ENTRÉ</Link>
+        <Link href="/" className="tracking-[-0.5px]">
+          FRI ENTRÉ
+        </Link>
       </motion.div>
 
       {/* Hamburger (mobile first) */}
