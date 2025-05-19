@@ -84,24 +84,24 @@ export default function Home() {
       {/* Event Title */}
       {/* Title & Date */}
       <motion.div
-        className="text-center font-bold md:py-10"
+        className="pt-[5.688rem] pb-6 text-center font-bold md:mt-[-9px] md:py-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.8 }}
         viewport={{ once: true }}
       >
-        <h1 className="flex flex-col text-3xl md:text-5xl md:leading-[48px] lg:text-[60px]">
-          <span>KULTUR</span>
+        <h1 className="flex flex-col text-3xl leading-none md:text-5xl md:leading-[3rem] lg:text-[3.75rem]">
+          <span className="md:leading-[1.1]">KULTUR</span>
           <span>FESTIVALEN</span>
         </h1>
-        <h2 className="mt-1 text-2xl sm:text-3xl md:text-[42px]">
+        <h2 className="text-2xl md:text-3xl lg:text-[2.625rem]">
           13-17/8 2025
         </h2>
       </motion.div>
 
       {/* Hero Section */}
       <motion.section
-        className="relative aspect-2/1"
+        className="relative aspect-436/241"
         ref={heroRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -157,7 +157,7 @@ export default function Home() {
         </motion.div>
 
         <motion.h2
-          className="mb-12 text-3xl font-normal tracking-tighter md:text-5xl lg:text-7xl"
+          className="mb-15 text-3xl leading-[0.96] font-normal tracking-[-1.5px] uppercase md:text-5xl lg:text-7xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
@@ -185,10 +185,10 @@ export default function Home() {
           <Link href="#">
             <Image
               src="/assets/events.png"
-              width={800}
-              height={472}
+              width={1517}
+              height={549}
               alt=""
-              className="mx-auto mt-25"
+              className="mx-auto mt-25 translate-x-[-26px]"
             />
           </Link>
         </motion.div>
@@ -196,9 +196,9 @@ export default function Home() {
 
       {/* Festival Cards */}
 
-      <section className="px-4 py-24 text-center">
+      <section className="px-4 py-[4.813rem] text-center">
         <motion.h2
-          className="mb-16 text-2xl leading-[0.96] font-normal md:text-[40px]"
+          className="mb-15 text-2xl leading-[0.96] font-normal tracking-[−0.2px] md:text-[2.5rem]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}

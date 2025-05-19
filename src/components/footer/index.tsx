@@ -10,8 +10,8 @@ import Stockholms from "@/assets/stockholms-stad-logotyp-vit.svg";
 
 const Footer = () => {
   return (
-    <footer className="px-6">
-      <div className="container mx-auto grid grid-cols-1 gap-8 border-t border-white/20 py-12 md:grid-cols-3">
+    <footer className="mt-[5.813rem] mb-[4.125rem] px-6">
+      <div className="md: container mx-auto flex w-full flex-col justify-between gap-8 border-t border-white/20 py-10 md:flex-row">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,13 +23,15 @@ const Footer = () => {
         </motion.div>
 
         <motion.div
-          className="text-center"
+          className="ml-[1.563rem] text-center md:text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <p className="mb-2">Följ oss</p>
+          <p className="font-button mb-2 text-[1.063rem] leading-none font-bold tracking-[−0.005em]">
+            Följ oss
+          </p>
           <div className="flex justify-center gap-4">
             <MagneticButton className="hover:text-primary transition-colors">
               <Link
@@ -37,7 +39,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Instagram className="h-6 w-6" />
+                <Instagram className="svgIcon text-2xl lg:text-[2.063rem]" />
               </Link>
             </MagneticButton>
             <MagneticButton className="hover:text-primary transition-colors">
@@ -46,7 +48,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Facebook className="h-6 w-6" />
+                <Facebook className="svgIcon text-2xl lg:text-[2rem]" />
               </Link>
             </MagneticButton>
             <MagneticButton className="hover:text-primary transition-colors">
@@ -55,21 +57,24 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Tiktok className="h-6 w-6" />
+                <Tiktok className="svgIcon text-2xl lg:text-[1.938rem]" />
               </Link>
             </MagneticButton>
           </div>
         </motion.div>
 
         <motion.div
-          className="text-center md:text-right"
+          className="font-button text-center text-[1.063rem] tracking-[−0.005em] md:text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <p className="mb-2 font-bold">KONTAKT</p>
-          <Link href="mailto:kulturfestivalen@stockholm.se" className="text-sm">
+          <p className="leading-none font-bold uppercase">KONTAKT</p>
+          <Link
+            href="mailto:kulturfestivalen@stockholm.se"
+            className="font-400 leading-[1.5]"
+          >
             kulturfestivalen@stockholm.se
           </Link>
         </motion.div>
